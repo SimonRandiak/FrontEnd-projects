@@ -1,0 +1,129 @@
+/* Fonts are from Google Fonts */
+/* Buttons are from https://copy-paste-css.com */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+    --title-color: white;
+    --title-text-size: 4rem;
+
+    --user-input-background: rgb(35, 28, 28);
+    --user-input-foreground: #fff;
+
+    --add-button-background: #fff;
+    --add-button-foreground: #696969;
+    --add-button-background-hover: rgba(255,255,255,0.9);
+    --add-button-shadow: rgb(93 93 93 / 23%);
+
+    --add-button-shadow: rgb(93 93 93 / 23%);
+
+    --card-background: #fff;
+    --card-foreground: #696969;
+
+    --delete-todo-background: rgb(255,51,51);
+    --delete-todo-foreground: #fff;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    color: var(--title-color);
+    font-size: var(--title-text-size);
+
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+#userInputDiv {
+    display: flex;
+}
+
+#addBtn {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: none;
+    padding: 0 56px;
+    height: 45px;
+    line-height: 45px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: var(--add-button-background);
+    color: var(--add-button-foreground);
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
+    :hover{
+        background: var(--add-button-background-hover);
+        box-shadow: 0 6px 20px var(--add-button-shadow);
+    }
+}
+
+#userInp {
+    width: 15rem;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: 0;
+    padding: 0.75rem;
+    background-color: var(--user-input-background);
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    color: var(--user-input-foreground);
+}
+
+main {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todoCardDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.4rem;
+    background-color: var(--card-background);
+    width: 24rem;
+    height: 45px;
+    border-radius: 7px;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.todoCardDiv h4 {
+    color: var(--card-foreground);
+    font-size: 1.25rem;
+
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+
+}
+
+.deleteTodoBtn {
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    height: 1.75rem;
+    width: 5rem;
+    background-color: var(--delete-todo-background);
+    color: var(--delete-todo-foreground);
+}
