@@ -106,3 +106,28 @@ main canvas {
     background-color: rgb(229, 229, 229);
     image-rendering: pixelated;
 }
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.403);
+}
+
+#popup.hidden {
+    display: none;
+}
+
+#popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#info {
+    text-align: center;
+    width: 20rem;
+    height: 22rem;
+    background-color: white;
+}

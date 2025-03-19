@@ -3,9 +3,11 @@ const ctx = canvas.getContext("2d")
 const resetBtn = document.querySelector("#ResetBtn")
 const startBtn = document.querySelector("#StartBtn")
 const editBtn = document.querySelector("#EditBtn")
+const popupDiv = document.querySelector("#popup")
 
 const rows = 30 
 const columns = 30 
+
 
 const cellWidth = canvas.width / rows
 const cellHeight = canvas.height / columns
@@ -13,6 +15,11 @@ const cellHeight = canvas.height / columns
 let grid = createGrid(rows, columns)
 let running = false 
 let editing = false 
+
+popupDiv.addEventListener("click", () => {
+    console.log("Clicked")
+    popupDiv.classList.add("hidden")
+})
 
 startBtn.addEventListener("click", () => {
     running = !running;
