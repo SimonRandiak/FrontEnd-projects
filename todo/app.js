@@ -4,10 +4,11 @@ const main = document.querySelector("main")
 let todos = []
 
 addTodo.addEventListener("click", () => {
-    console.log(todoText.value)
     let val = todoText.value;
+    if (val.length != 0) {
+        main.appendChild(create_new_todo(val));
+    }
     todoText.value = "";
-    main.appendChild(create_new_todo(val));
 })
 
 function create_new_todo(name)

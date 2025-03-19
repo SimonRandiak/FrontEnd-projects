@@ -101,8 +101,7 @@ main {
     justify-content: center;
 }
 main canvas {
-    border: 1px solid black;
-    width: 80rem;
+    width: 35rem;
     height: 35rem;
     background-color: rgb(229, 229, 229);
     image-rendering: pixelated;
