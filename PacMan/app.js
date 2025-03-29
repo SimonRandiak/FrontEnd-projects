@@ -7,8 +7,7 @@ map.drawMap()
 function loop() {
     map.drawMap()
     pacman.update()
-    pacman.draw()
-    setTimeout(loop, 20);
+    setTimeout(loop, 60);
 }
 
 loop()
