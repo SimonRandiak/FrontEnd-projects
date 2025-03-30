@@ -49,12 +49,16 @@ class Map {
                 else if (this.grid[y][x] == 2) {
                     this.ctx.beginPath()
                     this.ctx.strokeStyle = "white"
-                    this.ctx.arc(x*this.rectWidth+ (this.rectWidth/2), (y*this.rectHeight) + (this.rectHeight/2), this.rectWidth/4, 0, Math.PI * 2)
+                    this.ctx.arc(x*this.rectWidth+ (this.rectWidth/2), (y*this.rectHeight) + (this.rectHeight/2), this.rectWidth/6, 0, Math.PI * 2)
                     this.ctx.fillStyle = "white"
                     this.ctx.fill()
                     this.ctx.stroke()
                 }
             }
         }
+    }
+
+    updateGrid(y, x, value) {
+        this.grid[y][x] = value
     }
 }

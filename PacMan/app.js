@@ -7,7 +7,11 @@ map.drawMap()
 function loop() {
     map.drawMap()
     pacman.update()
-    setTimeout(loop, 60);
+    if (pacman.eat()) {
+        pos = pacman.getCurrentTile()
+        map.updateGrid(pos[0], pos[1], 0)
+    }
+    setTimeout(loop, 1000/20);
 }
 
 loop()

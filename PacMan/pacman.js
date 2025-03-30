@@ -118,6 +118,7 @@ class PacMan {
             }
             return false
         }
+
         getCurrentTile() {
             let tileY = Math.floor((this.positionY+(this.height/2)) / this.map.rectHeight)
             let tileX = Math.floor((this.positionX+(this.width/2)) / this.map.rectWidth)
@@ -130,22 +131,4 @@ class PacMan {
             return [tileY, tileX]
         }
 
-        snapTo(y, x) {
-            this.positionY = (y*this.map.rectHeight) + 1 
-            this.positionX = (x*this.map.rectWidth) + 1 
-        }
-
-        checkValidMove(y, x) {
-            if (y >= this.map.grid.length || y < 0) {
-                return false
-            }
-            if (x >= this.map.grid[y].length || x < 0) {
-                return false
-            }
-            if (this.map.grid[y][x] == 0 || this.map.grid[y][x] == 2) {
-                return true
-            }
-            return false
-
-        }
 }
