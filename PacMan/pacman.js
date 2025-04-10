@@ -1,5 +1,5 @@
 class PacMan {
-    constructor (map, x, y) {
+    constructor (map, y, x) {
         this.map = map
 
         this.pacmanUp = new Image()
@@ -24,7 +24,7 @@ class PacMan {
         this.width = this.map.rectWidth - 3 
         this.height = this.map.rectHeight - 3
 
-        this.currentScore = 20
+        this.score = 0
 
         this.direction = ""
         this.previousDirection = ""
@@ -50,7 +50,6 @@ class PacMan {
         }
         this.previousDirection = this.direction
         this.map.ctx.drawImage(this.currentImage, this.positionX, this.positionY, this.width, this.height)
-        this.eat()
     }
 
 
@@ -100,6 +99,7 @@ class PacMan {
         let position = this.getCurrentTile()
 
         if (this.map.grid[position[0]][position[1]] == 2) {
+            this.score += 20
             return true
 
         }
@@ -110,7 +110,7 @@ class PacMan {
                     if (this.map.grid[y][x] == 1) {
                         let rectY = y*this.map.rectHeight;
                         let rectX = x*this.map.rectWidth;
-                        if (this.positionX+this.width > rectX && this.positionX <= rectX+this.map.rectWidth && this.positionY+this.height > rectY && this.positionY <= rectY+this.map.rectHeight) {
+                        if (this.positionX+this.width > rectX && this.positionX < rectX+this.map.rectWidth && this.positionY+this.height > rectY && this.positionY < rectY+this.map.rectHeight) {
                             return true
                         }
                     }
@@ -131,4 +131,7 @@ class PacMan {
             return [tileY, tileX]
         }
 
+        currentScore() {
+            return this.score
+        }
 }
